@@ -159,7 +159,7 @@
                 android:layout_marginHorizontal="15dp"
                 android:onClickListener="@{listener::onClick}"
                 android:src="@drawable/exit_app_img"
-                android:background="none"/>
+                android:background="@color/transparent"/>
 
         </RelativeLayout>
     </RelativeLayout>
