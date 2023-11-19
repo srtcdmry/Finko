@@ -1,14 +1,10 @@
 package com.finko;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.finko.databinding.FragmentLiquidityRatiosBinding;
 import com.finko.databinding.FragmentSectorsBinding;
 
 
@@ -24,8 +20,9 @@ public class SectorsFragment extends BaseFragment implements View.OnClickListene
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentSectorsBinding.inflate(inflater, container, false);
-
         binding.setListener(this);
+        getToolbarBackButton().setOnClickListener(this);
+
         return binding.getRoot();
     }
 

@@ -1,9 +1,6 @@
 package com.finko;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +8,7 @@ import android.view.ViewGroup;
 import com.finko.databinding.FragmentFinancialAnalysisBinding;
 
 
-public class FinancialAnalysisFragment extends Fragment implements View.OnClickListener {
+public class FinancialAnalysisFragment extends BaseFragment implements View.OnClickListener {
 
     FragmentFinancialAnalysisBinding binding;
     @Override
@@ -24,6 +21,7 @@ public class FinancialAnalysisFragment extends Fragment implements View.OnClickL
                              Bundle savedInstanceState) {
         binding = FragmentFinancialAnalysisBinding.inflate(inflater, container, false);
         binding.setListener(this);
+        getToolbarBackButton().setOnClickListener(this);
 
         return binding.getRoot();
     }

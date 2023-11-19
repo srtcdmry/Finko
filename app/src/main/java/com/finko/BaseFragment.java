@@ -6,7 +6,6 @@ import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
-import com.finko.component.EditTextValidationResult;
 import com.finko.component.EditTextValidator;
 
 public class BaseFragment extends Fragment {
@@ -68,11 +67,9 @@ public class BaseFragment extends Fragment {
         return null;
     }
 
-
-
-        public void signOut(){
+    public void logout(){
         if (getActivity() != null){
-            ((BaseActivity) requireActivity()).signOut();
+            ((BaseActivity) requireActivity()).logout();
         }
     }
 }

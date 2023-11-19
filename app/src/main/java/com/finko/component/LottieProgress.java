@@ -1,20 +1,13 @@
 package com.finko.component;
 
-import static android.animation.ValueAnimator.INFINITE;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
-import android.animation.ObjectAnimator;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.view.Gravity;
-import android.view.View;
 import android.view.WindowManager;
-import android.view.animation.AccelerateDecelerateInterpolator;
 
-import androidx.fragment.app.Fragment;
-
-import com.finko.R;
 import com.finko.databinding.LottieProgressLayoutBinding;
 
 public class LottieProgress extends Dialog {

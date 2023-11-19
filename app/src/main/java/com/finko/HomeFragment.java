@@ -1,8 +1,6 @@
 package com.finko;
 
 import android.os.Bundle;
-
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,12 +24,14 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         binding.setListener(this);
+        getToolbarBackButton().setVisibility(View.GONE);
+
         return binding.getRoot();
     }
 
     @Override
     public void onClick(View v) {
-        if (v == binding.financialInputBtn){
+        if (v == binding.financialInputBtn) {
             Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_financialDataInputFragment);
         } else if (v == binding.financialAnalysisBtn) {
             Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_financialAnalysisFragment);
@@ -41,8 +41,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_financialStatementAnalysisFragment);
         } else if (v == binding.sectorsBtn) {
             Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_sectorsFragment);
-        } else if (v == binding.logoutBtn) {
+        } else if (v == binding.settingsBtn) {
             Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_settingsFragment);
+        } else if (v == binding.logoutBtn) {
+            logout();
+            Navigation.findNavController(binding.getRoot()).popBackStack();
         }
     }
 }

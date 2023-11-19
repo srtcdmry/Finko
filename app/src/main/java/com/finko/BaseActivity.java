@@ -2,9 +2,7 @@ package com.finko;
 
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.util.Patterns;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,13 +10,10 @@ import androidx.appcompat.content.res.AppCompatResources;
 
 import com.finko.component.EditTextValidationResult;
 import com.finko.component.EditTextValidator;
-import com.finko.component.GenericTextWatcher;
 import com.finko.component.LottieProgress;
 import com.finko.component.Toasty;
 import com.finko.helper.Constants;
 import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.Objects;
 
 import javax.inject.Inject;
 
@@ -107,7 +102,7 @@ public class BaseActivity extends AppCompatActivity {
         });
     }
 
-    public void signOut(){
+    public void logout(){
         mAuth.signOut();
         SharedPreferencesUtil.clear(this);
     }

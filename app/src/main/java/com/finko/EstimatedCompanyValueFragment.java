@@ -1,15 +1,11 @@
 package com.finko;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.finko.databinding.FragmentEstimatedCompanyValueBinding;
-import com.finko.databinding.FragmentLiquidityRatiosBinding;
 
 
 public class EstimatedCompanyValueFragment extends BaseFragment implements View.OnClickListener {
@@ -24,8 +20,9 @@ public class EstimatedCompanyValueFragment extends BaseFragment implements View.
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentEstimatedCompanyValueBinding.inflate(inflater, container, false);
-
         binding.setListener(this);
+        getToolbarBackButton().setOnClickListener(this);
+
         return binding.getRoot();
     }
 

@@ -1,7 +1,5 @@
 package com.finko;
 
-import android.app.Application;
-
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Locale;

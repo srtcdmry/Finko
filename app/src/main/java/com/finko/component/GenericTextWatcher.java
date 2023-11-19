@@ -1,14 +1,8 @@
 package com.finko.component;
 
-import android.content.res.ColorStateList;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.widget.EditText;
 
-import androidx.appcompat.content.res.AppCompatResources;
-import androidx.core.content.res.ResourcesCompat;
-
-import com.finko.R;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class GenericTextWatcher implements TextWatcher {

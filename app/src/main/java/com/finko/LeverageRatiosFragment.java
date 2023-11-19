@@ -1,16 +1,13 @@
 package com.finko;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.finko.databinding.FragmentLeverageRatiosBinding;
 
-public class LeverageRatiosFragment extends Fragment implements View.OnClickListener {
+public class LeverageRatiosFragment extends BaseFragment implements View.OnClickListener {
     FragmentLeverageRatiosBinding binding;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -21,8 +18,9 @@ public class LeverageRatiosFragment extends Fragment implements View.OnClickList
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentLeverageRatiosBinding.inflate(inflater, container, false);
-
         binding.setListener(this);
+        getToolbarBackButton().setOnClickListener(this);
+
         return binding.getRoot();
     }
 

@@ -20,8 +20,9 @@ public class ProfitabilityRatiosFragment extends BaseFragment implements View.On
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentProfitabilityRatiosBinding.inflate(inflater, container, false);
-
         binding.setListener(this);
+        getToolbarBackButton().setOnClickListener(this);
+
         return binding.getRoot();
     }
 
