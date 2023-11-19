@@ -47,7 +47,7 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/bg_color"
+            android:background="@color/finko_bg_color"
             android:paddingHorizontal="25dp"
             android:orientation="vertical"
             android:layout_below="@id/logo_layout">

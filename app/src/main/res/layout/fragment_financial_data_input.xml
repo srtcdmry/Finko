@@ -52,10 +52,13 @@
             android:background="@color/finko_bg_color">
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Finansal Analiz"
+                android:text="Finansal Veri Girişi"
                 android:textSize="20sp"
+                android:layout_alignParentTop="true"
+                android:paddingVertical="5dp"
                 android:background="@color/color_dark_blue"
                 android:gravity="center"
                 android:textColor="@color/white"/>
@@ -63,87 +66,422 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="100dp"
-                android:paddingHorizontal="20dp">
+                android:layout_below="@id/title"
+                android:layout_above="@id/btn_layout"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="30dp">
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/liquidity_ratios_btn"
-                    android:layout_width="0dp"
+                <ScrollView
+                    android:id="@+id/activity_scrollView1"
+                    android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="15dp"
-                    android:lineSpacingExtra="5dp"
-                    android:onClickListener="@{listener::onClick}"
-                    android:background="@color/color_dark_blue"
-                    android:text="Likidite Oranları"
-                    android:textColor="@color/white"
-                    android:paddingHorizontal="20dp"
-                    android:textAllCaps="false"
-                    app:layout_constraintDimensionRatio="H,1:1"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_weight="1"
+                    android:scrollbars="horizontal|vertical"
+                    android:scrollbarStyle="outsideInset"
+                    android:fillViewport="true"
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/turnover_rates_btn"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_margin="15dp"
-                    android:lineSpacingExtra="5dp"
-                    android:onClickListener="@{listener::onClick}"
-                    android:background="@color/color_dark_blue"
-                    android:text="Devir Hızı Oranları"
-                    android:textColor="@color/white"
-                    android:paddingHorizontal="20dp"
-                    android:textAllCaps="false"
-                    app:layout_constraintDimensionRatio="W,1:1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/guideline"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/leverage_ratios_btn"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_margin="15dp"
-                    android:lineSpacingExtra="5dp"
-                    android:onClickListener="@{listener::onClick}"
-                    android:background="@color/color_dark_blue"
-                    android:text="Kaldıraç Oranları"
-                    android:textColor="@color/white"
-                    android:paddingHorizontal="20dp"
-                    android:textAllCaps="false"
-                    app:layout_constraintDimensionRatio="W,1:1"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/liquidity_ratios_btn"/>
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/profitability_ratios_btn"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_margin="15dp"
-                    android:lineSpacingExtra="5dp"
-                    android:onClickListener="@{listener::onClick}"
-                    android:background="@color/color_dark_blue"
-                    android:text="Karlılık Oranları"
-                    android:textColor="@color/white"
-                    android:paddingHorizontal="20dp"
-                    android:textAllCaps="false"
-                    app:layout_constraintDimensionRatio="W,1:1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/guideline"
-                    app:layout_constraintTop_toBottomOf="@+id/turnover_rates_btn"/>
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="horizontal"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
 
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.5" />
+                        <TableLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/payment_detail_table"
+                            android:stretchColumns="1"
+                            android:isScrollContainer="true"
+                            >
+
+                            <TableRow
+                                android:background="@color/table_gray_color">
+
+                                <TextView
+                                    android:layout_width="150dp"
+                                    android:layout_height="40dp"
+                                    android:background="@drawable/input_data_bg_gray"
+                                    android:textSize="24sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:text="2023 Q1"
+                                    android:textColor="@color/color_dark_blue"
+                                    android:background="@drawable/input_data_bg_gray"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="5dp"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:fontFamily="sans-serif-medium"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:text="2023 Q1"
+                                    android:textColor="@color/color_dark_blue"
+                                    android:background="@drawable/input_data_bg_gray"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="5dp"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:fontFamily="sans-serif-medium"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:text="2023 Q1"
+                                    android:textColor="@color/color_dark_blue"
+                                    android:background="@drawable/input_data_bg_gray"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="5dp"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:fontFamily="sans-serif-medium"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:text="2023 Q1"
+                                    android:textColor="@color/color_dark_blue"
+                                    android:background="@drawable/input_data_bg_gray"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="5dp"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:fontFamily="sans-serif-medium"/>
+                            </TableRow>
+
+                            <TableRow
+                                android:background="@color/white"
+                                android:minHeight="40dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Dönen Varlıklar"
+                                    android:textColor="@color/color_dark_blue"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="5dp"
+                                    android:background="@drawable/input_data_bg2"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:fontFamily="sans-serif-medium"/>
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:background="@color/white"
+                                android:minHeight="40dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Duran Varlıklar"
+                                    android:textColor="@color/color_dark_blue"
+                                    android:background="@drawable/input_data_bg2"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="5dp"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:fontFamily="sans-serif-medium"/>
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+
+                            </TableRow>
+
+
+                            <TableRow
+                                android:background="@color/table_gray_color"
+                                android:minHeight="40dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Toplam Varlıklar"
+                                    android:fontFamily="sans-serif-black"
+                                    android:textColor="@color/color_dark_blue"
+                                    android:background="@drawable/input_data_bg_gray"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="5dp"
+                                    android:gravity="center"
+                                    android:textSize="18sp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/input_data_bg_gray"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/input_data_bg_gray"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/input_data_bg_gray"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/input_data_bg_gray"/>
+                            </TableRow>
+
+                            <TableRow
+                                android:background="@color/white"
+                                android:minHeight="40dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Toplam Özkaynaklar"
+                                    android:textColor="@color/color_dark_blue"
+                                    android:background="@drawable/input_data_bg2"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="5dp"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:fontFamily="sans-serif-medium"/>
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:background="@color/white"
+                                android:minHeight="40dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Kısa Vadeli \nYükümlülükler"
+                                    android:textColor="@color/color_dark_blue"
+                                    android:background="@drawable/input_data_bg2"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="5dp"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:fontFamily="sans-serif-medium"/>
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:background="@color/white"
+                                android:minHeight="40dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Uzun Vadeli \nYükümlülükler"
+                                    android:textColor="@color/color_dark_blue"
+                                    android:background="@drawable/input_data_bg2"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="5dp"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:fontFamily="sans-serif-medium"/>
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+
+                            </TableRow>
+
+
+                            <TableRow
+                                android:background="@color/white"
+                                android:minHeight="40dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Toplam Yükümlülükler"
+                                    android:textColor="@color/color_dark_blue"
+                                    android:background="@drawable/input_data_bg2"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="5dp"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:fontFamily="sans-serif-medium"/>
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="18sp"
+                                    android:background="@drawable/input_data_bg2"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:background="@color/table_gray_color"
+                                android:minHeight="40dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Toplam Kaynaklar"
+                                    android:fontFamily="sans-serif-black"
+                                    android:textColor="@color/color_dark_blue"
+                                    android:background="@drawable/input_data_bg_gray"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="5dp"
+                                    android:gravity="center"
+                                    android:textSize="18sp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/input_data_bg_gray"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/input_data_bg_gray"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/input_data_bg_gray"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/input_data_bg_gray"/>
+                            </TableRow>
+
+
+                        </TableLayout>
+                    </HorizontalScrollView>
+                </ScrollView>
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/btn_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="40dp"
+                android:paddingHorizontal="15dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="Excel Yükle"
+                    android:textAllCaps="false"
+                    android:layout_marginHorizontal="10dp"
+                    android:textColor="@color/white"
+                    android:paddingHorizontal="10dp"
+                    android:background="@drawable/ic_blue_btn_bg"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="Onayla"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:layout_marginHorizontal="10dp"
+                    android:paddingHorizontal="10dp"
+                    android:background="@drawable/ic_blue_btn_bg"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
 
 

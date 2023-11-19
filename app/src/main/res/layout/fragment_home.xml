@@ -49,117 +49,141 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/logo_layout"
-            android:background="@color/finko_bg_color"
-            android:paddingHorizontal="20dp">
+            android:background="@color/finko_bg_color">
 
-            <GridLayout
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/button_layout"
-                android:useDefaultMargins="false"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:columnCount="2"
-                android:rowCount="3"
-                android:paddingBottom="150dp"
-                android:layout_marginTop="50dp">
+                android:layout_marginTop="50dp"
+                android:paddingHorizontal="20dp">
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/financial_input_btn"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_margin="15dp"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
                     android:lineSpacingExtra="5dp"
                     android:onClickListener="@{listener::onClick}"
-                    android:background="@color/color_dark_blue"
+                    android:background="@drawable/ic_blue_btn_bg"
                     android:text="Finansal Veri Girişi"
                     android:textColor="@color/white"
                     android:paddingHorizontal="20dp"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    app:layout_constraintDimensionRatio="H,1:1"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/financial_analysis_btn"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_margin="15dp"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
                     android:lineSpacingExtra="5dp"
                     android:onClickListener="@{listener::onClick}"
-                    android:background="@color/color_dark_blue"
+                    android:background="@drawable/ic_blue_btn_bg"
                     android:text="Finansal Analiz"
                     android:textColor="@color/white"
                     android:paddingHorizontal="20dp"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    app:layout_constraintDimensionRatio="H,1:1"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/estimated_company_btn"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_margin="15dp"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
                     android:lineSpacingExtra="5dp"
                     android:onClickListener="@{listener::onClick}"
-                    android:background="@color/color_dark_blue"
+                    android:background="@drawable/ic_blue_btn_bg"
                     android:text="Tahmini Firma Değeri"
                     android:textColor="@color/white"
                     android:paddingHorizontal="20dp"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    app:layout_constraintDimensionRatio="H,1:1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guideline"
+                    app:layout_constraintTop_toBottomOf="@id/financial_input_btn" />
+
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/financial_statement_analysis_btn"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_margin="15dp"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
                     android:lineSpacingExtra="5dp"
                     android:onClickListener="@{listener::onClick}"
-                    android:background="@color/color_dark_blue"
+                    android:background="@drawable/ic_blue_btn_bg"
                     android:text="Finansal Tablo Analiz 101"
                     android:textColor="@color/white"
                     android:paddingHorizontal="20dp"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    app:layout_constraintDimensionRatio="H,1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/financial_analysis_btn"
+                    app:layout_constraintStart_toStartOf="@id/guideline"/>
+
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/sectors_btn"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_margin="15dp"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
                     android:lineSpacingExtra="5dp"
                     android:onClickListener="@{listener::onClick}"
-                    android:background="@color/color_dark_blue"
+                    android:background="@drawable/ic_blue_btn_bg"
                     android:text="Sektörler"
                     android:textColor="@color/white"
                     android:paddingHorizontal="20dp"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    app:layout_constraintDimensionRatio="H,1:1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/estimated_company_btn"
+                    app:layout_constraintEnd_toEndOf="@id/guideline"/>
+
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/settings_btn"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_margin="15dp"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
                     android:lineSpacingExtra="5dp"
                     android:onClickListener="@{listener::onClick}"
-                    android:background="@color/color_dark_blue"
+                    android:background="@drawable/ic_blue_btn_bg"
                     android:text="Ayarlar"
                     android:textColor="@color/white"
                     android:paddingHorizontal="20dp"
-                    android:textAllCaps="false" />
-            </GridLayout>
+                    android:textAllCaps="false"
+                    app:layout_constraintDimensionRatio="H,1:1"
+                    app:layout_constraintStart_toStartOf="@id/guideline"
+                    app:layout_constraintTop_toBottomOf="@id/financial_statement_analysis_btn"
+                    app:layout_constraintEnd_toEndOf="parent"/>
 
-            <ImageButton
-                android:id="@+id/logout_btn"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_alignEnd="@+id/button_layout"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="50dp"
-                android:layout_marginHorizontal="15dp"
-                android:onClickListener="@{listener::onClick}"
-                android:src="@drawable/exit_app_img"
-                android:background="@color/transparent"/>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <ImageButton
+                    android:id="@+id/logout_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@color/transparent"
+                    android:onClickListener="@{listener::onClick}"
+                    android:src="@drawable/exit_app_img"
+                    app:layout_constraintTop_toBottomOf="@id/settings_btn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginHorizontal="15dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
         </RelativeLayout>
     </RelativeLayout>
