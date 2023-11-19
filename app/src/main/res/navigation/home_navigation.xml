@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.finko.HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_financialDataInputFragment"
+            app:destination="@+id/navigation_financial_data_input"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/action_homeFragment_to_financialAnalysisFragment"
+            app:destination="@+id/navigation_financial_analysis"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/action_homeFragment_to_estimatedCompanyValueFragment"
+            app:destination="@+id/navigation_estimated_company_value"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/action_homeFragment_to_financialStatementAnalysisFragment"
+            app:destination="@+id/navigation_financial_statement_analysis"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/action_homeFragment_to_sectorsFragment"
+            app:destination="@+id/navigation_sectors"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@+id/navigation_settings"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true"/>
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_financial_data_input"
+        android:name="com.finko.FinancialDataInputFragment"
+        tools:layout="@layout/fragment_financial_data_input">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_financial_analysis"
+        android:name="com.finko.FinancialAnalysisFragment"
+        tools:layout="@layout/fragment_financial_analysis">
+        <action
+            android:id="@+id/action_financialAnalysisFragment_to_liquidityRatiosFragment"
+            app:destination="@+id/navigation_liquidity_ratios"
+            app:popUpTo="@id/navigation_financial_analysis"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_financialAnalysisFragment_to_turnoverRatesFragment"
+            app:destination="@+id/navigation_turnover_rates"
+            app:popUpTo="@id/navigation_financial_analysis"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_financialAnalysisFragment_to_leverageRatiosFragment"
+            app:destination="@+id/navigation_leverage_ratios"
+            app:popUpTo="@id/navigation_financial_analysis"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_financialAnalysisFragment_to_profitabilityRatiosFragment"
+            app:destination="@+id/navigation_profitability_ratios"
+            app:popUpTo="@id/navigation_financial_analysis"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_estimated_company_value"
+        android:name="com.finko.EstimatedCompanyValueFragment"
+        tools:layout="@layout/fragment_estimated_company_value">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_financial_statement_analysis"
+        android:name="com.finko.FinancialStatementAnalysisFragment"
+        tools:layout="@layout/fragment_financial_statement_analysis">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_sectors"
+        android:name="com.finko.SectorsFragment"
+        tools:layout="@layout/fragment_sectors">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.finko.SettingsFragment"
+        tools:layout="@layout/fragment_settings">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_liquidity_ratios"
+        android:name="com.finko.LiquidityRatiosFragment"
+        tools:layout="@layout/fragment_liquidity_ratios">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_turnover_rates"
+        android:name="com.finko.TurnoverRatesFragment"
+        tools:layout="@layout/fragment_turnover_rates">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_leverage_ratios"
+        android:name="com.finko.LeverageRatiosFragment"
+        tools:layout="@layout/fragment_leverage_ratios">
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_profitability_ratios"
+        android:name="com.finko.ProfitabilityRatiosFragment"
+        tools:layout="@layout/fragment_profitability_ratios">
+    </fragment>
+
+
+
+</navigation>

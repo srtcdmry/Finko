@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "460427521960",
+    "project_id": "finkoapp",
+    "storage_bucket": "finkoapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460427521960:android:9b9ad86db3a0a6130fb79d",
+        "android_client_info": {
+          "package_name": "com.finko"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460427521960-jg9727iilnnbh8h4shqsfjuvlvrtsg9d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.finko",
+            "certificate_hash": "ef776ac3056b8821a15b4da3763118afa654883f"
+          }
+        },
+        {
+          "client_id": "460427521960-gclii57gvqregi534pu6g68evm5df6k7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiTawD4wbmuLJY8HxN2Q0e4JBrKk4Nbc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "460427521960-gclii57gvqregi534pu6g68evm5df6k7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

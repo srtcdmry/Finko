@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/navigation_login">
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.finko.LoginFragment"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_loginFragment_to_updatePasswordFragment"
+            app:destination="@+id/navigation_update_password"
+            app:popUpTo="@id/navigation_login"
+            app:popUpToInclusive="true"/>
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_update_password"
+        android:name="com.finko.UpdatePasswordFragment"
+        tools:layout="@layout/fragment_update_password"
+        >
+
+        <action
+            android:id="@+id/action_passwordUpdateFragment_to_loginFragment"
+            app:destination="@+id/navigation_login"
+            app:popUpTo="@id/navigation_update_password"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>

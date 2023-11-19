@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Finko</string>
+    <string name="web_client_id">460427521960-gclii57gvqregi534pu6g68evm5df6k7.apps.googleusercontent.com</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
