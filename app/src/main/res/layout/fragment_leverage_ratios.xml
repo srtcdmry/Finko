@@ -92,6 +92,7 @@
                         android:textColor="@color/white" />
 
                     <EditText
+                        android:id="@+id/total_debt_ratio"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginHorizontal="10dp"
@@ -122,6 +123,7 @@
                         android:textColor="@color/white" />
 
                     <EditText
+                        android:id="@+id/long_term_debt"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginHorizontal="10dp"
@@ -152,6 +154,7 @@
                         android:textColor="@color/white" />
 
                     <EditText
+                        android:id="@+id/interest_coverage_ratio"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginHorizontal="10dp"
@@ -160,6 +163,7 @@
                 </LinearLayout>
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_calculate"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_gravity="end"

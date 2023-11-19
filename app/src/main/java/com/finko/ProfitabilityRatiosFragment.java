@@ -1,19 +1,16 @@
 package com.finko;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.finko.databinding.FragmentLiquidityRatiosBinding;
 import com.finko.databinding.FragmentProfitabilityRatiosBinding;
 
 public class ProfitabilityRatiosFragment extends BaseFragment implements View.OnClickListener {
 
     FragmentProfitabilityRatiosBinding binding;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +27,8 @@ public class ProfitabilityRatiosFragment extends BaseFragment implements View.On
 
     @Override
     public void onClick(View v) {
+        if (v == binding.btnCalculate) {
 
+        }
     }
 }

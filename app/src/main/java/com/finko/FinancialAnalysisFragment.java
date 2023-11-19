@@ -30,6 +30,14 @@ public class FinancialAnalysisFragment extends Fragment implements View.OnClickL
 
     @Override
     public void onClick(View v) {
+        if (v == binding.liquidityRatiosBtn){
 
+        } else if (v == binding.leverageRatiosBtn) {
+
+        } else if (v == binding.profitabilityRatiosBtn) {
+
+        } else if (v == binding.turnoverRatesBtn) {
+
+        }
     }
 }

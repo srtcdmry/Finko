@@ -28,6 +28,8 @@ public class LeverageRatiosFragment extends Fragment implements View.OnClickList
 
     @Override
     public void onClick(View v) {
+        if (v == binding.btnCalculate) {
 
+        }
     }
 }

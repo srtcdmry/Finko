@@ -93,6 +93,7 @@
                         android:textColor="@color/white" />
 
                     <EditText
+                        android:id="@+id/stock_turnover"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginHorizontal="10dp"
@@ -124,6 +125,7 @@
                         android:textColor="@color/white" />
 
                     <EditText
+                        android:id="@+id/receivables_turnover"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginHorizontal="10dp"
@@ -132,6 +134,7 @@
                 </LinearLayout>
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_calculate"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_gravity="end"

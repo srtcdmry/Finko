@@ -31,6 +31,8 @@ public class LiquidityRatiosFragment extends BaseFragment implements View.OnClic
 
     @Override
     public void onClick(View v) {
+        if (v == binding.btnCalculate) {
 
+        }
     }
 }
