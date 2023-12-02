@@ -172,6 +172,7 @@
                     android:layout_marginTop="15dp"
                     android:background="@drawable/ic_blue_btn_bg"
                     android:text="Hesapla"
+                    android:onClick="@{listener::onClick}"
                     android:textAllCaps="false"
                     android:textColor="@color/white" />
 

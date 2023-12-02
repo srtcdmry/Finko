@@ -85,6 +85,12 @@
         android:id="@+id/navigation_estimated_company_value"
         android:name="com.finko.EstimatedCompanyValueFragment"
         tools:layout="@layout/fragment_estimated_company_value">
+
+        <action
+            android:id="@+id/action_estimatedCompanyValueFragment_to_aosmCalculatorFragment"
+            app:destination="@+id/navigation_aosm_calculator"
+            app:popUpTo="@id/navigation_estimated_company_value"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
@@ -130,6 +136,11 @@
         tools:layout="@layout/fragment_profitability_ratios">
     </fragment>
 
+    <fragment
+        android:id="@+id/navigation_aosm_calculator"
+        android:name="com.finko.AosmCalculatorFragment"
+        tools:layout="@layout/fragment_aosm_calculator_fragment">
+    </fragment>
 
 
 </navigation>

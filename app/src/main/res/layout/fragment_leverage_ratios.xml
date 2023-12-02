@@ -169,6 +169,7 @@
                     android:gravity="center"
                     android:layout_marginHorizontal="15dp"
                     android:layout_marginTop="15dp"
+                    android:onClick="@{listener::onClick}"
                     android:background="@drawable/ic_blue_btn_bg"
                     android:text="Hesapla"
                     android:textAllCaps="false"
