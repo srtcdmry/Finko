@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -53,129 +54,106 @@
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
                 android:background="@color/color_dark_blue"
                 android:gravity="center"
-                android:layout_alignParentTop="true"
                 android:paddingVertical="5dp"
                 android:text="Kaldıraç Oranları"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_below="@id/title"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="50dp"
                 android:orientation="vertical">
 
-
-                <LinearLayout
-                    android:id="@+id/total_debt_ratio_layout"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/total_debt_text"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:weightSum="4">
+                    android:minHeight="40dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="15dp"
+                    android:background="@drawable/ic_blue_btn_bg"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="10dp"
+                    android:text="Toplam Borç Oranı"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@id/guideline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/guideline" />
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_weight="1.5"
-                        android:background="@drawable/ic_blue_btn_bg"
-                        android:gravity="center_vertical"
-                        android:paddingHorizontal="10dp"
-                        android:paddingVertical="5dp"
-                        android:text="Toplam Borç Oranı"
-                        android:textColor="@color/white" />
+                <EditText
+                    android:id="@+id/total_debt_ratio"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="15dp"
+                    android:background="@drawable/input_data_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/guideline"
+                    app:layout_constraintTop_toTopOf="@id/total_debt_text"
+                    app:layout_constraintBottom_toBottomOf="@+id/total_debt_text" />
 
-                    <EditText
-                        android:id="@+id/total_debt_ratio"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_weight="2.5"
-                        android:background="@drawable/input_data_bg" />
-                </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/long_term_debt_layout"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/long_term_text"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:weightSum="4">
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="15dp"
+                    android:background="@drawable/ic_blue_btn_bg"
+                    android:gravity="center_vertical"
+                    android:minHeight="40dp"
+                    android:paddingHorizontal="10dp"
+                    android:text="Uzun Vadeli Borç"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@id/guideline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/total_debt_text" />
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:minHeight="40dp"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_weight="1.5"
-                        android:background="@drawable/ic_blue_btn_bg"
-                        android:gravity="center_vertical"
-                        android:paddingHorizontal="10dp"
-                        android:paddingVertical="5dp"
-                        android:text="Uzun Vadeli Borç"
-                        android:textColor="@color/white" />
+                <EditText
+                    android:id="@+id/long_term_debt"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="15dp"
+                    android:background="@drawable/input_data_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/guideline"
+                    app:layout_constraintTop_toTopOf="@id/long_term_text"
+                    app:layout_constraintBottom_toBottomOf="@+id/long_term_text" />
 
-                    <EditText
-                        android:id="@+id/long_term_debt"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_weight="2.5"
-                        android:background="@drawable/input_data_bg" />
-                </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/interest_coverage_ratio_layout"
-                    android:layout_width="match_parent"
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:weightSum="4">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:minHeight="40dp"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_weight="1.5"
-                        android:background="@drawable/ic_blue_btn_bg"
-                        android:gravity="center_vertical"
-                        android:paddingHorizontal="10dp"
-                        android:paddingVertical="5dp"
-                        android:text="Nakit Oran"
-                        android:textColor="@color/white" />
-
-                    <EditText
-                        android:id="@+id/interest_coverage_ratio"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_weight="2.5"
-                        android:background="@drawable/input_data_bg" />
-                </LinearLayout>
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.4" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_calculate"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="end"
-                    android:gravity="center"
                     android:layout_marginHorizontal="15dp"
-                    android:layout_marginTop="15dp"
-                    android:onClick="@{listener::onClick}"
+                    android:layout_marginTop="35dp"
                     android:background="@drawable/ic_blue_btn_bg"
+                    android:gravity="center"
+                    android:onClick="@{listener::onClick}"
+                    android:paddingHorizontal="25dp"
                     android:text="Hesapla"
                     android:textAllCaps="false"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/long_term_debt" />
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
         </RelativeLayout>
     </RelativeLayout>
 </layout>
